@@ -93,8 +93,8 @@ Above this line
 ##Customization
 
 ```javascript
-var base_url="https://www.mynoblecare.com/my_shoutbox/"; //base url
-var chat_widget_full_url="https://www.mynoblecare.com/my_shoutbox/"; //static chatbox page url
+var base_url="http://www.domain.com/my_shoutbox/"; //base url
+var chat_widget_full_url="http://www.domain.com/my_shoutbox/"; //static chatbox page url
 var chat_header_title="Shoutbox"; //window title
 ```
 * You can set the name of the chat window (e.g Shoutbox is default name) by modifying Shoutbox and writing anything instead of it like "Chat Box", "Online Chat" etc.
