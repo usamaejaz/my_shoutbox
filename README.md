@@ -41,7 +41,7 @@ var chat_header_title="Shoutbox"; //window title
 <script src="http://www.domain.com/my_shoutbox/chat_full.js"></script>
 
 <!-- inlcude css -->
-<link href="https://www.domain.com/my_shoutbox/chat.css" rel="stylesheet" type="text/css" />
+<link href="http://www.domain.com/my_shoutbox/chat.css" rel="stylesheet" type="text/css" />
 <style>
 .chat_wrapper {
 position:relative !important;
