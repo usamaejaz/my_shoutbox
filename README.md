@@ -1,7 +1,8 @@
 #My Shoutbox v1.0
 
 
-A tiny Shoutbox created with jQuery and PHP | http://www.thedeveloper24.com/2014/10/ajax-shoutbox-with-jquery-and-php.html
+A tiny Shoutbox created with jQuery and PHP
+http://www.thedeveloper24.com/2014/10/ajax-shoutbox-with-jquery-and-php.html
 
 
 ##Installation
