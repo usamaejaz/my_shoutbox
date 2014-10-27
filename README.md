@@ -88,7 +88,7 @@ To disable this, you have to add the following part
 ```var no_redirect=1;```
 Above this line 
 ```var base_url="http://www.domain.com/my_shoutbox/"; //base url```
-* Default username is: ```admin``` and password is ```t00r```.
+* For Admin Panel, default username is: ```admin``` and password is ```t00r```.
 
 ##Customization
 
