@@ -85,7 +85,7 @@ if($_POST['uname'] && $_POST['pwd']){
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shoutbox Admin | Usama Ejaz</title>
+<title>Shoutbox Admin | TheDeveloper24.Com</title>
 
 <!-- include jQuery if not available -->
 <script>window.jQuery || document.write('<script src="//code.jquery.com/jquery-1.10.2.min.js"><\/script>')</script>
