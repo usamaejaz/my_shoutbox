@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="PHP and jQuery Shoutbox : A tiny Shoutbox created with jQuery and PHP">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>PHP and jQuery Shoutbox</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/usamaejaz/my_shoutbox">View on GitHub</a>
+
+          <h1 id="project_title">PHP and jQuery Shoutbox</h1>
+          <h2 id="project_tagline">A tiny Shoutbox created with jQuery and PHP</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/usamaejaz/my_shoutbox/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/usamaejaz/my_shoutbox/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="my-shoutbox-v10" class="anchor" href="#my-shoutbox-v10"><span class="octicon octicon-link"></span></a>My Shoutbox v1.0</h1>
+
+<p>A tiny Shoutbox created with jQuery and PHP
+<a href="http://www.thedeveloper24.com/2014/10/ajax-shoutbox-with-jquery-and-php.html">http://www.thedeveloper24.com/2014/10/ajax-shoutbox-with-jquery-and-php.html</a></p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<ul>
+<li>Copy all the files inside <code>my_shoutbox</code> in any directory on your website (for example: <code>my_shoutbox</code> in my case).
+*Edit config.php to add your database settings, admin details and website settings</li>
+<li>Import <code>create_table.sql</code> to your database or simply copy and paste the command(s) inside it to create the table for shoutbox (you can set your own table name too)</li>
+<li>Now login to admin panel by navigating to <code>admin.php</code> in your web browser using the details that you set in config.php</li>
+<li>Embed Codes and Documentation is waiting for you in admin.php (after logging in)</li>
+<li>Thats all :)</li>
+</ul>
+
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>PHP</li>
+<li>jQuery</li>
+<li>MySQL</li>
+</ul>
+
+<h2>
+<a name="html-code-example" class="anchor" href="#html-code-example"><span class="octicon octicon-link"></span></a>HTML Code (example)</h2>
+
+<h4>
+<a name="head" class="anchor" href="#head"><span class="octicon octicon-link"></span></a>&lt;head&gt;</h4>
+
+<div class="highlight highlight-html"><pre><span class="c">&lt;!-- include jQuery if not available --&gt;</span>
+<span class="nt">&lt;script&gt;</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">'&lt;script src="//code.jquery.com/jquery-1.10.2.min.js"&gt;&lt;\/script&gt;'</span><span class="p">)</span><span class="nt">&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- script variables --&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="kd">var</span> <span class="nx">base_url</span><span class="o">=</span><span class="s2">"http://www.domain.com/my_shoutbox/"</span><span class="p">;</span> <span class="c1">//base url</span>
+<span class="kd">var</span> <span class="nx">chat_widget_full_url</span><span class="o">=</span><span class="s2">"http://www.domain.com/my_shoutbox/"</span><span class="p">;</span> <span class="c1">//static chatbox page url</span>
+<span class="kd">var</span> <span class="nx">chat_header_title</span><span class="o">=</span><span class="s2">"Shoutbox"</span><span class="p">;</span> <span class="c1">//window title</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- include js files --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://www.domain.com/my_shoutbox/chat_full.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- inlcude css --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"http://www.domain.com/my_shoutbox/chat.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+<span class="nc">.chat_wrapper</span> <span class="p">{</span>
+<span class="k">position</span><span class="o">:</span><span class="k">relative</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="k">border</span><span class="o">:</span><span class="k">none</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="k">margin</span><span class="o">:</span><span class="m">0</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="k">width</span><span class="o">:</span><span class="m">100%</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="k">right</span><span class="o">:</span><span class="m">0</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.chat_window</span> <span class="p">{</span>
+<span class="k">border</span><span class="o">:</span><span class="m">1px</span> <span class="k">solid</span> <span class="m">#FF7400</span><span class="p">;</span>
+<span class="k">margin-bottom</span><span class="o">:</span><span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</pre></div>
+
+<h4>
+<a name="body" class="anchor" href="#body"><span class="octicon octicon-link"></span></a>&lt;body&gt;</h4>
+
+<div class="highlight highlight-html"><pre><span class="c">&lt;!-- inside &lt;body&gt; tag --&gt;</span>
+<span class="c">&lt;!-- include this div for loading shoutbox --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chat_window"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;noscript&gt;&lt;div</span> <span class="na">style=</span><span class="s">"text-algin:center;"</span><span class="nt">&gt;</span>It needs <span class="nt">&lt;b&gt;</span>JAVASCRIPT<span class="nt">&lt;/b&gt;</span> to be enabled to access this page. Please <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">"_blank"</span> <span class="na">href=</span><span class="s">"http://enable-javascript.com/"</span><span class="nt">&gt;</span>enable javascript<span class="nt">&lt;/a&gt;&lt;/div&gt;&lt;/noscript&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<h2>
+<a name="widget-or-standalone" class="anchor" href="#widget-or-standalone"><span class="octicon octicon-link"></span></a>Widget or Standalone?</h2>
+
+<p>This shoutbox comes with two modes.</p>
+
+<ul>
+<li>Widget mode (will be added just like facebook chat)</li>
+<li>Standalone/Static mode (will be displayed on a page that you specify)</li>
+</ul>
+
+<h2>
+<a name="some-tips" class="anchor" href="#some-tips"><span class="octicon octicon-link"></span></a>Some tips</h2>
+
+<ul>
+<li>Using the above code will add the Shoutbox to the website/webpage. If you want to use it as a widget which can be minimized too(just like facebook chat) than Replace the following part 
+<code>&lt;script src="http://www.domain.com/my_shoutbox/chat_full.js"&gt;&lt;/script&gt;</code>
+with
+<code>&lt;script src="http://www.domain.com/my_shoutbox/chat.js"&gt;&lt;/script&gt;</code>
+</li>
+<li>The code which needs to be pasted in the  tag is not needed when using it as a widget. (Only needed when using it as standalone)</li>
+<li>Note: When Chat widget is loaded but the current viewport width is not so enough to fit the widget (e.g on mobile devices), the user will be redirected to <code>chat_widget_full_url</code> (which is same as <code>base_url</code> by default) upon clicking the Shoutbox widget. (these are set in javascript)
+To disable this, you have to add the following part 
+<code>var no_redirect=1;</code>
+Above this line 
+<code>var base_url="http://www.domain.com/my_shoutbox/"; //base url</code>
+</li>
+<li>For Admin Panel, default username is: <code>admin</code> and password is <code>t00r</code>.</li>
+</ul>
+
+<h2>
+<a name="customization" class="anchor" href="#customization"><span class="octicon octicon-link"></span></a>Customization</h2>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">base_url</span><span class="o">=</span><span class="s2">"http://www.domain.com/my_shoutbox/"</span><span class="p">;</span> <span class="c1">//base url</span>
+<span class="kd">var</span> <span class="nx">chat_widget_full_url</span><span class="o">=</span><span class="s2">"http://www.domain.com/my_shoutbox/"</span><span class="p">;</span> <span class="c1">//static chatbox page url</span>
+<span class="kd">var</span> <span class="nx">chat_header_title</span><span class="o">=</span><span class="s2">"Shoutbox"</span><span class="p">;</span> <span class="c1">//window title</span>
+</pre></div>
+
+<ul>
+<li>You can set the name of the chat window (e.g Shoutbox is default name) by modifying Shoutbox and writing anything instead of it like "Chat Box", "Online Chat" etc.</li>
+<li>Note: base_url (in Javascript) and $base_url (in PHP) refers to the path where the script/files are installed. </li>
+<li>Note: chat_widget_full_url (in Javascript) refers to the path of the page where the chatbox is added as static.</li>
+<li>You can also customize the theme (css file) if necessary to suit your needs.</li>
+</ul>
+
+<h2>
+<a name="help" class="anchor" href="#help"><span class="octicon octicon-link"></span></a>Help?</h2>
+
+<p>Well, you can reach me at <a href="http://www.thedeveloper24.com">www.thedeveloper24.com</a> :)</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">PHP and jQuery Shoutbox maintained by <a href="https://github.com/usamaejaz">usamaejaz</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
