@@ -85,7 +85,7 @@ if($_POST['uname'] && $_POST['pwd']){
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shoutbox Admin | TheDeveloper24.Com</title>
+<title>Shoutbox Admin | Usama Ejaz</title>
 
 <!-- include jQuery if not available -->
 <script>window.jQuery || document.write('<script src="//code.jquery.com/jquery-1.10.2.min.js"><\/script>')</script>
@@ -145,14 +145,6 @@ $msg_id=$_GET['msg_id'];
 if(($a=='delete') && (!empty($msg_id))){
 	mysql_query("DELETE FROM `$tbl3` WHERE `id`='$msg_id'") or die("error while deleting: ".mysql_error());
 }
-if((empty($_POST['limit'])) || (!ctype_digit($_POST['limit']))){
-	$limit=$_POST['limit']="100";
-} else {
-	$limit=$_POST['limit'];
-}
-
-$q=mysql_query("SELECT * FROM `$tbl3` ORDER BY `id` DESC LIMIT $limit") or die(mysql_error());
-
 
 
 ?>
@@ -163,10 +155,24 @@ $q=mysql_query("SELECT * FROM `$tbl3` ORDER BY `id` DESC LIMIT $limit") or die(m
 <a href="admin.php?action=logout" style="padding-bottom:2px;text-decoration:underline;float:right;font-size:12px;position:relative;bottom: 15px;left: 12px;">Logout</a>
 
 
-<?php if($menu=='view_messages'){ ?>
+<?php if($menu=='view_messages'){ 
+
+
+if((empty($_POST['limit'])) || (!ctype_digit($_POST['limit']))){
+	$limit=$_POST['limit']="100";
+} else {
+	$limit=$_POST['limit'];
+}
+
+$q=mysql_query("SELECT * FROM `$tbl3` ORDER BY `id` DESC LIMIT $limit") or die(mysql_error());
+
+$q_count=mysql_query("SELECT count(`id`) as count FROM `$tbl3` ") or die(mysql_error());
+$count_=mysql_fetch_assoc($q_count);
+
+?>
 Messages to load
 <form style="margin-top:5px;" method="POST" action=""><input class="msgs_to_load" title="Last 'x' messages to load" style="display:inline;height: auto;min-height: unset;width: unset;" type="text" name="limit" value="<?=$_POST['limit']?>" /><input style="display: inline;width: unset;height: unset;min-height: unset;padding: 1px;border-left: unset;" type="submit" class="btn" value="Go" /></form>
-<h3 class="hh" style="margin-bottom:unset;">Manage Messages <small>(<?=mysql_num_rows($q)?>)</small></h3>
+<h3 class="hh" style="margin-bottom:unset;">Manage Messages <small>(<?=($count_['count'])?>)</small></h3>
 <?php
 while($r=mysql_fetch_assoc($q)){
 
@@ -272,10 +278,20 @@ You can set the name of the chat window <i>(e.g Shoutbox is default name)</i> by
 
 <h4>Help</h4>
 <p>If you encounter any type of problem or have any question in mind than don't hesitate to drop me a few lines at <a href="mailto:osamaejaz1@gmail.com">osamaejaz1@gmail.com</a>.
-<?php } else { ?>
+<?php } else { 
+
+
+
+$q_count=mysql_query("SELECT count(`id`) as count FROM `$tbl3` ") or die(mysql_error());
+$count_=mysql_fetch_assoc($q_count);
+
+
+
+
+?>
 <h3 class="hh">Welcome!</h3>
 <ul>
-<li><a href="?menu=view_messages">Manage Messages <small>(<?=mysql_num_rows($q)?>)</small></a></li>
+<li><a href="?menu=view_messages">Manage Messages <small>(<?=($count_['count'])?>)</small></a></li>
 <li><a href="?menu=get_code">Get Embed Code / Documentation</a></li>
 
 </ul>
