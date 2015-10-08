@@ -1,4 +1,4 @@
-#My Shoutbox v1.0
+#My Shoutbox v1.1
 
 
 A tiny Shoutbox created with jQuery and PHP
