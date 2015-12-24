@@ -85,7 +85,7 @@ $("#chatmessages").append( "<div class='chat-container' id='chat" + val['id'] + 
 $('#chatmessages').scrollTop($('#chatmessages')[0].scrollHeight);
 }
 });
-setTimeout(chat_heartbeat(), 100);
+setTimeout(function(){ chat_heartbeat(); }, 100);
 },
   error:function(){
 	chat_heartbeat();
@@ -107,7 +107,7 @@ $.ajax({
 			chatter.removeAttr("disabled");
 		}
 	}
-	setTimeout(getChatterName(), 100);
+	setTimeout(function(){ getChatterName(); }, 100);
   },
   error:function(){
 	getChatterName();
