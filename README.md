@@ -1,12 +1,12 @@
-#JUST A BASIC EXAMPLE ON CREATING A SHOUTBOX. USE AT YOUR OWN RESPONSIBILITY.
+## JUST A BASIC EXAMPLE ON CREATING A SHOUTBOX. USE AT YOUR OWN RESPONSIBILITY.
 
-#My Shoutbox
+# My Shoutbox
 
 A tiny Shoutbox created with jQuery and PHP
 http://www.thedeveloper24.com/2014/10/ajax-shoutbox-with-jquery-and-php.html
 
 
-##Installation
+## Installation
 
 * Copy all the files inside ```my_shoutbox``` in any directory on your website (for example: ```my_shoutbox``` in my case).
 *Edit config.php to add your database settings, admin details and website settings
@@ -17,7 +17,7 @@ http://www.thedeveloper24.com/2014/10/ajax-shoutbox-with-jquery-and-php.html
 
 
 
-##Requirements
+## Requirements
 
 * PHP
 * jQuery
@@ -25,7 +25,7 @@ http://www.thedeveloper24.com/2014/10/ajax-shoutbox-with-jquery-and-php.html
  
 
 
-##HTML Code (example)
+## HTML Code (example)
 
 #### &lt;head&gt;
 ```html
@@ -70,7 +70,7 @@ margin-bottom:20px;
 
 
 
-##Widget or Standalone?
+## Widget or Standalone?
 
 This shoutbox comes with two modes.
 * Widget mode (will be added just like facebook chat)
@@ -78,7 +78,7 @@ This shoutbox comes with two modes.
  
 
 
-##Some tips
+## Some tips
 
 * Using the above code will add the Shoutbox to the website/webpage. If you want to use it as a widget which can be minimized too(just like facebook chat) than Replace the following part 
 ```<script src="http://www.domain.com/my_shoutbox/chat_full.js"></script>```
@@ -92,7 +92,7 @@ Above this line
 ```var base_url="http://www.domain.com/my_shoutbox/"; //base url```
 * For Admin Panel, default username is: ```admin``` and password is ```t00r```.
 
-##Customization
+## Customization
 
 ```javascript
 var base_url="http://www.domain.com/my_shoutbox/"; //base url
@@ -104,8 +104,3 @@ var chat_header_title="Shoutbox"; //window title
 * Note: chat_widget_full_url (in Javascript) refers to the path of the page where the chatbox is added as static.
 * You can also customize the theme (css file) if necessary to suit your needs.
  
-
-
-##Help?
-
-Well, you can reach me at www.thedeveloper24.com :)
