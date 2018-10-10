@@ -14,6 +14,6 @@ INSTALLATION
 
 *************************
 Usama Ejaz
-thedeveloper24.com
+https://usamaejaz.com/
 osamaejaz1[at]gmail.com
 *************************
